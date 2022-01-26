@@ -4,8 +4,8 @@ services:
 
   planos:
     image: gisa-planos:0.0.1-SNAPSHOT
+    restart: always
     depends_on:
-      - rabbitmq
       - db
     ports:
       - "8080:8080"
@@ -20,17 +20,6 @@ services:
       MYSQL_DATABASE: gisa-plano
     ports:
       - "3307:3306"
-
-  rabbitmq:
-    image: rabbitmq:3-management-alpine
-    ports:
-      - 5672:5672
-      - 15672:15672
-    volumes:
-      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
-      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
-    networks:
-      - apps-network
 
 networks:
   apps-network:
