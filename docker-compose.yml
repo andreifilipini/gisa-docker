@@ -2,8 +2,16 @@ version: "3.2"
 
 services:
 
-  planos:
-    image: gisa-planos:0.0.1-SNAPSHOT
+  gisa-auth:
+    image: gisa-auth:0.0.1
+    restart: always
+    ports:
+      - "8081:8081"
+    networks:
+      - apps-network
+
+  gisa-planos:
+    image: gisa-planos:0.0.1
     restart: always
     depends_on:
       - db
