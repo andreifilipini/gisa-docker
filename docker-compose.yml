@@ -10,6 +10,14 @@ services:
     networks:
       - apps-network
 
+  gisa-agenda:
+    image: gisa-agenda:0.0.1
+    restart: always
+    ports:
+      - "8082:8082"
+    networks:
+      - apps-network
+
   gisa-planos:
     image: gisa-planos:0.0.1
     restart: always
