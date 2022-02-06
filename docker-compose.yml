@@ -4,6 +4,7 @@ services:
 
   gisa-planos:
     image: gisa-planos:0.0.1
+    container_name: gisa-planos
     restart: always
     depends_on:
       - gisa-db
@@ -14,6 +15,7 @@ services:
 
   gisa-auth:
     image: gisa-auth:0.0.1
+    container_name: gisa-auth
     restart: always
     ports:
       - "8081:8081"
@@ -24,6 +26,7 @@ services:
 
   gisa-agenda:
     image: gisa-agenda:0.0.1
+    container_name: gisa-agenda
     restart: always
     ports:
       - "8082:8082"
@@ -34,6 +37,7 @@ services:
 
   gisa-agendamento:
     image: gisa-agendamento:0.0.1
+    container_name: gisa-agendamento
     restart: always
     ports:
       - "8083:8083"
@@ -44,6 +48,7 @@ services:
 
   gisa-db:
     image: mysql
+    container_name: gisa-db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
