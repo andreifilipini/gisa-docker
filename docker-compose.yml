@@ -24,6 +24,17 @@ services:
     depends_on:
       - gisa-db
 
+  gisa-associados:
+    image: gisa-associados:0.0.1
+    container_name: gisa-associados
+    restart: always
+    ports:
+      - "8082:8082"
+    networks:
+      - apps-network
+    depends_on:
+      - gisa-db
+
   gisa-agendamento:
     image: gisa-agendamento:0.0.1
     container_name: gisa-agendamento
