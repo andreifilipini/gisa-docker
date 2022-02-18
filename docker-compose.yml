@@ -46,6 +46,15 @@ services:
     depends_on:
       - gisa-db
 
+  gisa-legado:
+    image: gisa-legado:0.0.1
+    container_name: gisa-legado
+    restart: always
+    ports:
+      - "8084:8084"
+    networks:
+      - apps-network
+
   gisa-agenda-1:
     image: gisa-agenda:0.0.1
     container_name: gisa-agenda-1
